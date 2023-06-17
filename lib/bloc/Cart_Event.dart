@@ -1,12 +1,13 @@
 import 'package:shopping_blocapp/data/Product.dart';
 
 abstract class CartEvent{
-  Product product;
-  CartEvent({required this.product});
 }
+
 class AddToCart extends CartEvent{
-  AddToCart({required super.product});
+  Product product;
+  AddToCart({required this.product});
 }
-class RemoveToCart extends CartEvent{
-  RemoveToCart({required super.product});
+class RemoveFromCart extends CartEvent{
+  Product product;
+  RemoveFromCart({required this.product});
 }

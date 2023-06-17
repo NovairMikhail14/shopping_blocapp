@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
+    return BlocProvider<CartBloc>(
       create: (context) {
         return CartBloc();
       },
@@ -30,7 +30,8 @@ class HomePage extends StatelessWidget {
                         ),
                         label: Text("")),
                   ),
-                  BlocConsumer<CartBloc,CartState>(builder:(context, state) {
+                  BlocConsumer<CartBloc,CartState>(
+                    builder:(context, state) {
                     return Positioned(
                         left: 30,
                         child: Container(

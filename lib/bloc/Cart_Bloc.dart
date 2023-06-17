@@ -7,19 +7,16 @@ import 'package:shopping_blocapp/data/Product.dart';
 class CartBloc extends Bloc<CartEvent,CartState>{
   List<Product> _items = [];
   List<Product> get items => _items;
-  set items(List<Product> value) {
-    _items = value;
-  }
 
   CartBloc():super(CartEmpty()){
-    on<AddToCart>((event, emit)  {
-      items.add(event.product);
-      emit(ProductAdd(AddItem: items));
+    on<AddToCart>((event, emit){
+      _items.add(event.product);
+      emit(ProductAdd(AddItem: _items));
     });
 
-    on<RemoveToCart>((event, emit) {
-      items.remove(event.product);
-      emit(ProductRemove(RemoveItem: items));
+    on<RemoveFromCart>((event, emit) {
+      _items.removeWhere((element) => element.id == event.product.id && element.count == event.product.count ,);
+      emit(ProductRemove(RemoveItem: _items));
     });
   }
 
