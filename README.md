@@ -1,6 +1,6 @@
 # shopping_blocapp
 
-### Shopping Project using [BLIoC Package](https://pub.dev/packages/flutter_bloc)   
+### Shopping Project using [BLoC Package](https://pub.dev/packages/flutter_bloc)   
 
 # Sample Image
 <p align="left" >
